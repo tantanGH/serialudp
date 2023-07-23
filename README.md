@@ -7,10 +7,13 @@ RS232C/UART serial communication gateway over UDP
 ## About This
 
 これはPythonで実装された RS232C/UART シリアル通信を UDP を使ってIPネットワーク越しに転送するためのゲートウェイサーバアプリケーションです。
-主たるユースケースとして、RS232Cクロス通信を使うレトロPCの通信対戦ゲームをLAN、あるいはインターネット越しに実現することを想定しています。
 
 Pythonで書かれているため、IPネットワークに接続されたPythonが動作する環境であればLinux,macOSなどOSを問わずに動かすことができます。
 ただし、Windows OSでは動作しないかもしれません。(selectorsを使っているため)
+
+主たるユースケースとして、RS232Cクロス通信を使うレトロPCの通信対戦ゲームをLAN、あるいはインターネット越しに実現することを想定しています。(下図)
+
+<img src='images/serialudp1.png'/>
 
 以下の説明では X680x0 のRS232Cクロス接続対戦ゲームを Raspberry Pi を使用してIPネットワーク越しに行う前提で記述してあります。適宜読み替えてください。
 
