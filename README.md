@@ -27,7 +27,7 @@ Pythonで書かれているため、IPネットワークに接続されたPython
 - Raspberry Pi 3A+/3B+/4B のいずれか (2/Zeroは所有していないので不明)
   - Raspberry Pi OS が導入済であること (最新の32bit OS Liteでのみ確認)
   - インターネットに接続されていること
-  - USB-SerialおyびRS232CクロスケーブルでX680x0実機と接続されていること
+  - USB-SerialおよびRS232CクロスケーブルでX680x0実機と接続されていること
   - `/dev/ttyUSB0` が見えていること
 
 - X680x0 実機
