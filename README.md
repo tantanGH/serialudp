@@ -24,8 +24,8 @@ Pythonで書かれているため、IPネットワークに接続されたPython
   - RS232Cクロスケーブル(25pin-9pin)
   - USB-Serial変換ケーブル
 
-- Raspberry Pi 3A+/3B+/4B のいずれか (2/Zeroは所有していないので未検証)
-  - Raspberry Pi OS が導入済であること (最新の32bit OS Liteでのみ検証)
+- Raspberry Pi 3A+/3B+/4B のいずれか (2/Zeroは所有していないので不明)
+  - Raspberry Pi OS が導入済であること (最新の32bit OS Liteでのみ確認)
   - インターネットに接続されていること
   - USB-SerialおyびRS232CクロスケーブルでX680x0実機と接続されていること
   - `/dev/ttyUSB0` が見えていること
