@@ -190,7 +190,8 @@ divisor が正しくセットされたことを確認します。
 
 
 本OVERTAKEの設定に関しては、以下の記事を参考にさせて頂きました。
-[https://yatte-mita.hateblo.jp/entry/2019/11/27/223957](https://yatte-mita.hateblo.jp/entry/2019/11/27/223957)
+
+- [https://yatte-mita.hateblo.jp/entry/2019/11/27/223957](https://yatte-mita.hateblo.jp/entry/2019/11/27/223957)
 
 既に似たようなことを実践されていた方がいらっしゃったのを後になって知りました。(Java/TCPに対してPython/UDPという違いはありますが)
 大変参考になりました。この場を借りてお礼申し上げます。
