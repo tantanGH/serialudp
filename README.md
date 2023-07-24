@@ -69,7 +69,7 @@ serialudp をこのGitリポジトリから導入する。
 
 まず双方の Raspberry Pi とX680x0の物理的なケーブルの接続を確認した後、serialudp サーバアプリケーションを立ち上げます。
 
-    nohup serialudp -d /dev/ttyUSB0 -l 6830 192.168.1.5 6830 &
+        nohup serialudp -d /dev/ttyUSB0 -l 6830 192.168.1.5 6830 &
 
 `-d` の後に指定するデバイス名は USB-Serial 変換アダプタのデバイス名になります。指定なしの場合のデフォルトは `/dev/ttyUSB0` です。
 
@@ -81,11 +81,11 @@ serialudp をこのGitリポジトリから導入する。
 
 - Raspberry Pi (A)で実行するコマンド
 
-    nohup serialudp -d /dev/ttyUSB0 -l 6830 192.168.1.5 6830 &
+        nohup serialudp -d /dev/ttyUSB0 -l 6830 192.168.1.5 6830 &
 
 - Raspberry Pi (B)で実行するコマンド
 
-    nohup serialudp -d /dev/ttyUSB0 -l 6830 192.168.1.4 6830 &
+        nohup serialudp -d /dev/ttyUSB0 -l 6830 192.168.1.4 6830 &
 
 あとはポピュラスのマニュアルにしたがって、データリンクモードで対戦セットアップを行います。
 
