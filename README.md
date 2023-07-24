@@ -182,11 +182,11 @@ divisor が正しくセットされたことを確認します。
 
 あとは QUICK RACE から 2 PLAYERS を選択すれば接続が確立するはずです。
 
-<img src='images/serialudp11.jpg'/>
+<img src='images/serialudp11.jpeg'/>
 
-<img src='images/serialudp13.jpg'/>
+<img src='images/serialudp13.jpeg'/>
 
-<img src='images/serialudp12.jpg'/>
+<img src='images/serialudp12.jpeg'/>
 
 
 本OVERTAKEの設定に関しては、以下の記事を参考にさせて頂きました。
