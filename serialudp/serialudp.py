@@ -23,13 +23,13 @@ def sigint_handler(signum, frame):
 def serial_event_handler(key, mask, udp_socket_tx, remote_address):
   data = key.fileobj.read()
   udp_socket_tx.sendto(data, remote_address)
-  #print(f"Received {len(data)} bytes from serial port.")
+#  print(f"Received {len(data)} bytes from serial port.")
 
 # udp event handler
 def udp_event_handler(key, mask, serial_port):
   data, addr = key.fileobj.recvfrom(1024)
   serial_port.write(data)
-  #print(f"Received {len(data)} bytes from UDP.")
+#  print(f"Received {len(data)} bytes from UDP.")
 
 # service loop
 def run_service(remote_ip, remote_port, listen_port, serial_device, serial_baudrate):
