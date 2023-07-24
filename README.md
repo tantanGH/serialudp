@@ -81,11 +81,11 @@ serialudp をこのGitリポジトリから導入する。
 
 - Raspberry Pi (A)で実行するコマンド
 
-    nohup serialdup -d /dev/ttyUSB0 -l 6830 192.168.1.5 6830 &
+    nohup serialudp -d /dev/ttyUSB0 -l 6830 192.168.1.5 6830 &
 
 - Raspberry Pi (B)で実行するコマンド
 
-    nohup serialdup -d /dev/ttyUSB0 -l 6830 192.168.1.4 6830 &
+    nohup serialudp -d /dev/ttyUSB0 -l 6830 192.168.1.4 6830 &
 
 あとはポピュラスのマニュアルにしたがって、データリンクモードで対戦セットアップを行います。
 
