@@ -31,7 +31,9 @@ Pythonで書かれているため、IPネットワークに接続されている
 
 - ケーブル
   - RS232Cクロスケーブル(25pin-9pin)
-  - USB-Serial変換ケーブル
+  - USB-Serial変換ケーブル(FTDI社のチップセットを使っているもの)
+
+FTDIチップセットはOVERTAKEの対戦を行う際には必須となります。
 
 - Raspberry Pi 3A+/3B+/4B のいずれか (2/Zeroは所有していないので不明)
   - Raspberry Pi OS が導入済であること (最新の32bit OS Liteでのみ確認)
@@ -138,7 +140,60 @@ Raspberry Pi 上での serialudp の立ち上げについてはポピュラス�
 
 ## 使い方 (X680x0 OVERTAKEの例)
 
-OVERTAKE は特殊な通信速度を使っているため、上記の設定だけでは動作しません。38400bps を 31250bpsに偽装することで対処できると思いますが、いずれ検証して追記したいと思います。
+OVERTAKE は特殊な通信速度を使っているため、上記の設定だけでは動作しません。
+
+まず、USB-Serial変換ケーブルがFTDIチップセットを使っていることが前提となります。PLチップセットでは以下の設定は使えません。
+
+
+`setserial`を追加インストールします。
+
+    sudo apt-get install setserial
+
+
+`serialudp` を起動します。この時に `-s 38400` オプションをつけて起動します。
+
+    nohup serialudp -s 38400 -d /dev/ttyUSB0 -l 6830 192.168.1.5 6830 &
+
+
+現状のベースレートを確認します。
+
+    sudo setserial -a /dev/ttyUSB0
+    /dev/ttyUSB0, Line 0, UART: unknown, Port: 0x0000, IRQ: 0
+      Baud_base: 24000000, close_delay: 50, divisor: 0
+      closing_wait: 3000
+      Flags: spd_normal
+
+
+OVERTAKEはRS-MIDIと同じ31250bpsを使っているため、24000000 / 31250 = 768 を新たな divisor の値として設定します。
+
+    sudo setserial /dev/ttyUSB0 spd_cust divisor 768
+
+
+divisor が正しくセットされたことを確認します。
+
+    sudo setserial -a /dev/ttyUSB0
+    /dev/ttyUSB0, Line 0, UART: unknown, Port: 0x0000, IRQ: 0
+      Baud_base: 24000000, close_delay: 50, divisor: 768
+      closing_wait: 3000
+      Flags: spd_cust
+
+
+双方の Raspberry Pi で同じことを行います。
+
+あとは QUICK RACE から 2 PLAYERS を選択すれば接続が確立するはずです。
+
+<img src='images/serialudp11.jpg'/>
+
+<img src='images/serialudp13.jpg'/>
+
+<img src='images/serialudp12.jpg'/>
+
+
+本OVERTAKEの設定に関しては、以下の記事を参考にさせて頂きました。
+[https://yatte-mita.hateblo.jp/entry/2019/11/27/223957](https://yatte-mita.hateblo.jp/entry/2019/11/27/223957)
+
+既に似たようなことを実践されていた方がいらっしゃったのを後になって知りました。(Java/TCPに対してPython/UDPという違いはありますが)
+大変参考になりました。この場を借りてお礼申し上げます。
 
 ---
 
