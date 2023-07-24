@@ -128,7 +128,7 @@ Raspberry Pi 上での serialudp の立ち上げについてはポピュラス�
 上記のジオグラフシールの構成は以下で行いました。
 
 - X68030/060turbo (68060 50.0MHz) + Raspberry 3B+
-- X68000XVI (16.6MHz) + Raspberry Pi 4B+
+- X68000XVI (16.6MHz) + Raspberry Pi 4B
 
 残念ながら X68000XVI + PhantomX の構成では、MPUモードを000にしたりウェイトを増やしてみたりしたのですが、VS modeを選択した瞬間にタイトル画面に戻ってしまいます。serialudp を起動していなかったり、RS232Cケーブルを接続していない場合はエラー音になるので、その状態よりは進んで一瞬対戦エントリー画面にはなるのですが。
 
